@@ -15,7 +15,7 @@ class User(UserMixin, db.Model):
     username = db.Column(db.String(255),index = True)
     email = db.Column(db.String(255),unique = True,index = True)
     pass_secure = db.Column(db.String(255))
-    posts = db.relationship('Posts', backref = 'user', lazy = "dynamic")
+    posts = db.relationship('Post', backref = 'user', lazy = "dynamic")
     comments = db.relationship('Comment', backref = 'user', lazy = "dynamic")
     bio = db.Column(db.String(255))
     profile_pic_path = db.Column(db.String())
@@ -44,7 +44,7 @@ class Post(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     title = db.Column(db.String(255))
     content = db.Column(db.String)
-    blog_id = db.Column(db.Integer, db.ForeignKey('blogs.id'))
+    blog = db.Column(db.Integer, db.ForeignKey('blogs.id'))
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     comments = db.relationship('Comment', backref = 'posts', lazy = "dynamic")
 
@@ -80,7 +80,7 @@ class Comment(db.Model):
     __tablename__ = 'comments'
     id = db.Column(db.Integer, primary_key = True)
     feedback = db.Column(db.String)
-    post_id = db.Column(db.Integer, db.ForeignKey('posts.id'))
+    posts_id = db.Column(db.Integer, db.ForeignKey('posts.id'))
     posted = db.Column(db.DateTime,default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))    
 
