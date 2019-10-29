@@ -5,12 +5,12 @@ from wtforms.validators import Required
 # post form
 class PostForm(FlaskForm):
     content = TextAreaField('post')
-    submit = SubmitField('Submit POst')
+    submit = SubmitField('Submit Your Post')
 
 #Comment Form
 class CommentForm(FlaskForm):
     comment = TextAreaField('Comment', validators=[Required()])
-    submit = SubmitField()
+    submit = SubmitField('Comment')
     # vote=RadioField('default field arguments', choices=[('1', 'UpVote'), ('1', 'DownVote')])
 
 # blogForm
