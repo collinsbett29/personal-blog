@@ -44,7 +44,7 @@ class Post(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     title = db.Column(db.String(255))
     content = db.Column(db.String)
-    blog = db.Column(db.Integer, db.ForeignKey('blogs.id'))
+    blog_id = db.Column(db.Integer, db.ForeignKey('blogs.id'))
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     comments = db.relationship('Comment', backref = 'posts', lazy = "dynamic")
 
