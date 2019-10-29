@@ -104,3 +104,12 @@ def single_comment(id):
         abort(404)
     format_comment = markdown2.markdown(comment.post,extras=["code-friendly", "fenced-code-blocks"])
     return render_template('comment.html',comment=comment,format_comment=format_comment)
+
+@main.route('/user/<uname>')
+def profile(uname):
+    user = User.query.filter_by(username = uname).first()
+
+    if user is None:
+        abort(404)
+
+    return render_template("profile/profile.html", user = user)
