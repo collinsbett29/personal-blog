@@ -28,8 +28,8 @@ class ProdConfig(Config):
 
 
 class DevConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://collins:##@@collins1@localhost/blogs'
-    DEBUG = True
+    # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://collins:##@@collins1@localhost/blogs'
+    pass
 
 config_options = {
 'development':DevConfig,
