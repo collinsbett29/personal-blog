@@ -25,7 +25,7 @@ Built by Collins Kipkorir Bett
 ## Setup
 -To clone,Run command below in you terminal 
 * $ git clone https://github.com/collinsbett29/blogs.git
-* $ cd pitches
+* $ cd blogs
 #### Create a virtual environment
 * $ python3.6 -m venv --without-pip virtual 
 * $ source virtual/bin/activate
