@@ -76,17 +76,17 @@ class Blog(db.Model):
         blogs = Blog.query.all()
         return blogs
 
-class Comment(db.Model):
-    __tablename__ = 'comments'
-    id = db.Column(db.Integer, primary_key = True)
-    feedback = db.Column(db.String)
-    posts_id = db.Column(db.Integer, db.ForeignKey('posts.id'))
-    posted = db.Column(db.DateTime,default=datetime.utcnow)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))    
+# class Comment(db.Model):
+#     __tablename__ = 'comments'
+#     id = db.Column(db.Integer, primary_key = True)
+#     feedback = db.Column(db.String)
+#     posts_id = db.Column(db.Integer, db.ForeignKey('posts.id'))
+#     posted = db.Column(db.DateTime,default=datetime.utcnow)
+#     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))    
 
-    def save_comment(self):
-        '''
-        Function that saves comments
-        '''
-        db.session.add(self)
-        db.session.commit()
+#     def save_comment(self):
+#         '''
+#         Function that saves comments
+#         '''
+#         db.session.add(self)
+#         db.session.commit()
