@@ -19,15 +19,17 @@
         <h1 style="font-style: italic;font-family:'Times New Roman', Times, serif;font-size: 60px;"><strong>PERSONAL BLOG</strong></h1>
     </div>
     <div class="panel-body" style="text-align: center;">
-        <h3 style="background-color: white;">BLOGS</h3>
+        <h3 style="background-color: white;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font: outline;font-size: 50px;">BLOGS</h3>
         <div class="card" style="width: 18rem; text-align: center;" >
             <ul class="list-group list-group-flush">
               <li class="list-group-item">{{ macro.displayBlogList(blog) }}</li>
             </ul>
           </div>
         <button><a href="/add/blog" class="btn btn-outline-success">Add a New Blog</a></button>
+        <div class="footer" style="background-color: white;margin-top: 10px;margin-bottom: 20px;">
+            {{ random_quote.quote}}
+        </div>
     </div>
 </div>
 </div>
-
 {% endblock  %}

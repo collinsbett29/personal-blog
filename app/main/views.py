@@ -4,6 +4,7 @@ from ..models import User,Blog,Post,Comment
 from flask_login import login_required, current_user
 from .forms import PostForm,BlogForm,CommentForm,UpdateProfile
 from .. import db,photos
+from ..request import get_random_quote
 import  markdown2
 
 @main.route('/')
@@ -12,8 +13,9 @@ def index():
     view root that returns the index page and its data
     '''
     blog = Blog.get_blogs()
+    random_quote = get_random_quote()
 
-    return render_template('index.html', blog = blog)
+    return render_template('index.html', blog = blog, random_quote = random_quote)
 
 @main.route('/add/blog', methods=['GET','POST'])
 @login_required
