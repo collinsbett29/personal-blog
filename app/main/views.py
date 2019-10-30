@@ -88,7 +88,7 @@ def new_comment(id):
         comment = form.comment.data
 
         # updated comment instance
-        new_comment = Comment(post_id=Post.id,post_title=title,post_comment=comment,user=current_user)
+        new_comment = Comment(posts_id=Post.id,post_title=title,post_comment=comment,user=current_user)
 
         # save comment method
         new_comment.save_comment()
