@@ -81,7 +81,6 @@ class Comment(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     feedback = db.Column(db.String)
     posts_id = db.Column(db.Integer, db.ForeignKey('posts.id'))
-    posts = db.relationship('Comment', backref = 'user', lazy = "dynamic")
     posted = db.Column(db.DateTime,default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))    
 
